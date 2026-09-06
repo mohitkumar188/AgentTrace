@@ -32,7 +32,8 @@ export default function AgentDashboard() {
   const fetchTraces = async (isManual = false) => {
     if (isManual) setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/v1/sessions");
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://agenttrace-api-cdav.onrender.com";
+      const res = await fetch(`${apiUrl}/api/v1/sessions`);
       const data = await res.json();
       const newSessions = data.sessions || {};
       setSessions(newSessions);
@@ -103,11 +104,10 @@ export default function AgentDashboard() {
                       setSelectedSession(sid);
                       selectedSessionRef.current = sid;
                     }}
-                    className={`w-full text-left p-3 rounded-md border text-sm transition flex flex-col gap-1 ${
-                      isSelected
+                    className={`w-full text-left p-3 rounded-md border text-sm transition flex flex-col gap-1 ${isSelected
                         ? "bg-neutral-800 border-emerald-500"
                         : "bg-neutral-900 border-neutral-800 hover:border-neutral-700"
-                    }`}
+                      }`}
                   >
                     <div className="flex justify-between items-center">
                       <span className="font-mono text-xs text-neutral-200 font-semibold">{sid}</span>
@@ -143,9 +143,8 @@ export default function AgentDashboard() {
               return (
                 <div
                   key={`${step.session_id}_${step.step_number}`}
-                  className={`bg-neutral-900/80 border rounded-lg p-5 transition ${
-                    step.was_healed ? "border-amber-500/40" : "border-neutral-800"
-                  }`}
+                  className={`bg-neutral-900/80 border rounded-lg p-5 transition ${step.was_healed ? "border-amber-500/40" : "border-neutral-800"
+                    }`}
                 >
                   <div className="flex justify-between items-center mb-3">
                     <div className="flex items-center gap-3">
