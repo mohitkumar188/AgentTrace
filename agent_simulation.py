@@ -1,6 +1,6 @@
 import time
 from pydantic import BaseModel, Field
-from tracer import trace_step, start_trace_session
+from agent_trace import trace_step, start_trace_session
 
 # --- Tool Schemas ---
 class BalanceSchema(BaseModel):

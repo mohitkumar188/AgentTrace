@@ -5,7 +5,7 @@ import uuid
 import copy
 from typing import Optional, Type
 from pydantic import BaseModel
-from self_healing import validate_and_heal
+from .self_healing import validate_and_heal
 
 COLLECTOR_URL = "http://127.0.0.1:8000/api/v1/trace"
 

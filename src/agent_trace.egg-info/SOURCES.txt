@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/agent_trace/__init__.py
+src/agent_trace/self_healing.py
+src/agent_trace/tracer.py
+src/agent_trace.egg-info/PKG-INFO
+src/agent_trace.egg-info/SOURCES.txt
+src/agent_trace.egg-info/dependency_links.txt
+src/agent_trace.egg-info/requires.txt
+src/agent_trace.egg-info/top_level.txt
