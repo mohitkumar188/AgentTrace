@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+traces.db
+dashboard/node_modules/
+dashboard/.next/
