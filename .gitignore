@@ -3,3 +3,5 @@ __pycache__/
 traces.db
 dashboard/node_modules/
 dashboard/.next/
+dist/
+*.egg-info/
